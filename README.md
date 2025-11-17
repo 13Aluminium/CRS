@@ -20,7 +20,7 @@ frontend/
 ```
 
 ## Getting started (local)
-1. Create a virtual environment with Python 3.11+ (the dependency pins support Python 3.12) and install dependencies:
+1. Create a virtual environment and install dependencies:
    ```bash
    cd backend
    python -m venv .venv
@@ -62,4 +62,3 @@ Update the **API base URL** field in the UI to point to your deployed backend UR
 ## Notes
 - Recommendations default to the overall corpus profile if no query or likes are supplied.
 - TF-IDF is fast and light; you can swap in SentenceTransformers embeddings by replacing the vectorizer and similarity logic in `backend/main.py`.
-- If you previously hit a `ForwardRef._evaluate()` error on Python 3.12, reinstall with the updated `backend/requirements.txt` (FastAPI + Pydantic v2 pins) to regain compatibility.
