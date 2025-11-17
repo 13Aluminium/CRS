@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textboard Recommendations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>Textboard</h1>
+        <p>Curate your reading list with Pinterest-inspired recommendations.</p>
+        <div class="hero__actions">
+          <input id="interestInput" type="text" placeholder="What are you into? e.g. space exploration, machine learning" />
+          <button id="recommendBtn">Get Recommendations</button>
+        </div>
+        <div class="hero__meta">
+          <label for="apiBase">API base URL</label>
+          <input id="apiBase" type="text" value="http://localhost:8000" />
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Explore</h2>
+            <p>Browse posts and tap ♡ to like them.</p>
+          </div>
+          <span class="pill" id="likedCount">0 liked</span>
+        </div>
+        <div class="grid" id="itemsGrid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Recommended for you</h2>
+            <p>Based on your interests and liked posts.</p>
+          </div>
+        </div>
+        <div class="grid" id="recommendationsGrid"></div>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card__header">
+          <h3 class="card__title"></h3>
+          <span class="pill pill--muted card__category"></span>
+        </div>
+        <p class="card__snippet"></p>
+        <div class="card__footer">
+          <button class="like" title="Like this">&#9829;</button>
+          <span class="score"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
